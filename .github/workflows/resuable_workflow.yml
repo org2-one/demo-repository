@@ -40,5 +40,5 @@ jobs:
             uses: docker/build-push-action@v6
             with:
               push: true
-              tags: sharan2717/sample-gradle-project:v1 
+              tags: ${{ secrets.registry-password }}/sample-gradle-project:v1 
   
