@@ -28,7 +28,8 @@ jobs:
           steps:
            -
             name: Build Docker image
-            run: docker build -t ${{ inputs.image-name }}:${{ inputs.image-tag }} ${{ inputs.dockerfile-path }}
+            run: docker build -f ${{ inputs.dockerfile-path }} -t ${{ secrets.registry-username }}/${{ inputs.image-name }}:${{ inputs.image-tag }} .
+            
            - 
             name: Log in to Docker Hub
             run: docker login --username ${{ secrets.registry-username }} --password ${{ secrets.registry-password }}
