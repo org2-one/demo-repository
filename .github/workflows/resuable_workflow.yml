@@ -37,3 +37,10 @@ jobs:
             with:
               push: true
               tags: ${{ secrets.registry-username}}/${{ inputs.image-name}}:${{ inputs.image-tag}}
+
+           - 
+            name: Build and push Docker image
+            run: |
+                  docker build -t ${{ secrets.registry-username }}/${{ inputs.image-name }}:${{ inputs.image-tag }} .
+                  docker push ${{ secrets.registry-username }}/${{ inputs.image-name }}:${{ inputs.image-tag }}
+  
