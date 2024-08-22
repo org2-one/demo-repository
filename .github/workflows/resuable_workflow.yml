@@ -36,4 +36,4 @@ jobs:
             uses: docker/build-push-action@v6
             with:
               push: true
-              tags: ${{ secrets.registry-username}}/${{ secrets.image-name}}:${{ secrets.image-tag}}
+              tags: ${{ secrets.registry-username}}/${{ inputs.image-name}}:${{ inputs.image-tag}}
