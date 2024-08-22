@@ -40,5 +40,5 @@ jobs:
             uses: docker/build-push-action@v6
             with:
               push: true
-              tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-gradle-project:v1 
+              tags: sharan2717/sample-gradle-project:v1 
   
